@@ -497,7 +497,8 @@
 }
 
 .product-page-redesign .rental-article {
-    max-width: 1120px;
+    width: 100%;
+    max-width: none;
     margin-top: 0;
 }
 
@@ -575,7 +576,8 @@
 }
 
 .product-page-redesign .rental-faq {
-    max-width: 1200px;
+    width: 100%;
+    max-width: none;
 }
 
 .product-page-redesign .rental-faq__item {
