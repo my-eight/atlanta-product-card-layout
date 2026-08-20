@@ -1,0 +1,926 @@
+/*
+ * Локальные корректировки обновлённой карточки товара.
+ * Исходные style.css и additional.css остаются без изменений.
+ */
+
+.product-page-redesign {
+    --product-radius-lg: 24px;
+    --product-radius: 16px;
+    --product-radius-control: 14px;
+    --product-section-gap: 48px;
+}
+
+/* Верхняя карточка товара */
+.product-page-redesign .card-product__pr .contacts__list-drop-t {
+    margin: 7px 0 0;
+    color: var(--gray2);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.product-page-redesign .card-product__rent-economy {
+    max-width: 440px;
+    margin-top: 13px;
+    padding-top: 12px;
+    border-top: 1px solid var(--bord);
+    color: var(--green);
+    font-size: 15px;
+    line-height: 1.45;
+    font-weight: 500;
+}
+
+.product-page-redesign .card-product__slider_for .card-product__slider-item,
+.product-page-redesign .card-product__l > .delivery__list-item,
+.product-page-redesign .tab_content .delivery__list-item,
+.product-page-redesign .tab_content .leasing-tx__inf {
+    border-radius: var(--product-radius);
+}
+
+.product-page-redesign .card-product__l > .card-product__i.delivery__list-item {
+    margin-top: 20px;
+    padding: 16px 20px;
+}
+
+.product-page-redesign .card-product__btn {
+    margin-top: 24px;
+}
+
+.product-page-redesign .card-product__btn .btn {
+    padding: 16px 32px;
+    border-radius: var(--product-radius-control);
+}
+
+.product-page-redesign .card-product__tech {
+    margin-top: 24px;
+}
+
+/* Табы и их содержимое */
+.product-page-redesign .card-product__descr.tabs_wrapper {
+    margin-top: 48px;
+    border-top: 0;
+}
+
+.product-page-redesign .card-product__descr .tabs_container {
+    margin-top: 0;
+}
+
+.product-page-redesign .card-product__descr .tabs {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--product-radius);
+}
+
+.product-page-redesign .card-product__descr .tabs li {
+    flex: 1 1 0;
+    width: auto;
+    padding: 15px 18px;
+    font-size: 18px;
+    line-height: 1.35;
+    white-space: nowrap;
+}
+
+.product-page-redesign .card-product__descr .tabs li:first-of-type,
+.product-page-redesign .card-product__descr .tabs li:last-of-type {
+    border-radius: 0;
+}
+
+.product-page-redesign .card-product__descr .tabs_container > .card-product__i {
+    margin-top: 28px;
+}
+
+.product-page-redesign .tab_content > h2 {
+    margin: 0 0 20px;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.product-page-redesign .tab_content .card-product__descr-tx,
+.product-page-redesign .tab_content .card-product__descr-tx p,
+.product-page-redesign .tab_content .card-product__descr-tx li {
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.product-page-redesign .tab_content .card-product__descr-tx table td {
+    padding: 3px 16px 3px 0;
+    vertical-align: top;
+}
+
+.product-page-redesign .tab_content .delivery__list-item {
+    align-items: flex-start;
+    padding: 22px;
+}
+
+.product-page-redesign .tab_content .delivery__list-item p {
+    margin: 12px 0 0;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.product-page-redesign .tab_content .banner__slider-tx {
+    font-size: 18px;
+    line-height: 1.35;
+}
+
+.product-page-redesign .tab_content .card-product__descr-item {
+    padding: 7px 0;
+}
+
+.product-page-redesign .tab_content .card-product__descr-item span {
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+/* Форма подбора техники */
+.product-page-redesign .equipment-section {
+    margin-top: var(--product-section-gap);
+}
+
+.product-page-redesign .equipment-section > .content {
+    max-width: 1520px;
+}
+
+@media (min-width: 1601px) {
+    .product-page-redesign .equipment-section > .content {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+.product-page-redesign .equipment-panel {
+    padding: 44px 0;
+    border-radius: var(--product-radius-lg);
+}
+
+.product-page-redesign .equipment-panel__header .minititle {
+    margin: 0;
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.product-page-redesign .equipment-panel__header .minititle b {
+    font-weight: 700;
+}
+
+.product-page-redesign .equipment-panel__header p {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.product-page-redesign .equipment-form {
+    margin-top: 28px;
+}
+
+.product-page-redesign .equipment-form__grid {
+    display: grid;
+    gap: 16px;
+}
+
+.product-page-redesign .equipment-form__parameters {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.product-page-redesign .equipment-form__contacts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 16px;
+}
+
+.product-page-redesign .equipment-form__cell {
+    min-width: 0;
+}
+
+.product-page-redesign .equipment-field {
+    min-height: 80px;
+    padding: 14px 18px;
+    box-sizing: border-box;
+    background: var(--c-white);
+    border-radius: var(--product-radius);
+}
+
+.product-page-redesign .equipment-field .contacts__l {
+    width: 100%;
+    padding: 0;
+}
+
+.product-page-redesign .equipment-field .contacts__list-drop-t {
+    margin-bottom: 5px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.product-page-redesign .equipment-field .catalog-page__sort-tt {
+    display: block;
+    width: 100%;
+    padding-right: 24px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.product-page-redesign .equipment-field .catalog-page__sort-drop {
+    top: calc(100% + 12px);
+    right: auto;
+    left: 0;
+    width: 100%;
+    min-width: 240px;
+    padding: 18px;
+    box-sizing: border-box;
+    border-radius: var(--product-radius-control);
+}
+
+.product-page-redesign .equipment-form__input,
+.product-page-redesign .equipment-form__textarea {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    background: var(--c-white);
+    color: var(--c-black-brand);
+    font-family: Stolzl, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.product-page-redesign .equipment-form__input {
+    height: 54px;
+    padding: 0 18px;
+    border-radius: var(--product-radius-control);
+}
+
+.product-page-redesign .equipment-form__textarea {
+    display: block;
+    height: 104px;
+    min-height: 104px;
+    margin-top: 16px;
+    padding: 17px 18px;
+    border-radius: var(--product-radius);
+    line-height: 1.5;
+    resize: vertical;
+}
+
+.product-page-redesign .equipment-form__input::placeholder,
+.product-page-redesign .equipment-form__textarea::placeholder {
+    color: var(--gray5);
+    opacity: 1;
+}
+
+.product-page-redesign .equipment-form__submit-row {
+    margin-top: 16px;
+}
+
+.product-page-redesign .equipment-form__submit-row .equipment-form__submit {
+    width: 100%;
+    min-height: 55px;
+    padding: 14px 24px;
+    border-radius: var(--product-radius-control);
+    background: #2d9e00;
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+/* Акции и похожие товары */
+.product-page-redesign .promotions-section,
+.product-page-redesign .related-products-section {
+    margin-top: var(--product-section-gap);
+}
+
+.product-page-redesign .section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.product-page-redesign .section-heading h2 {
+    margin: 0;
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.product-page-redesign .section-heading__link {
+    flex-shrink: 0;
+    color: var(--green);
+    font-size: 15px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.product-page-redesign .promotions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.product-page-redesign .promotion-card {
+    display: grid;
+    grid-template-columns: 205px minmax(0, 1fr);
+    gap: 22px;
+    min-height: 212px;
+    margin-top: 0;
+    padding: 16px;
+    box-sizing: border-box;
+    background: var(--c-white);
+    border-radius: var(--product-radius);
+}
+
+.product-page-redesign .promotion-card__media {
+    display: block;
+    height: 180px;
+    overflow: hidden;
+    border-radius: var(--product-radius-control);
+}
+
+.product-page-redesign .promotion-card__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-page-redesign .promotion-card__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 3px 4px 3px 0;
+}
+
+.product-page-redesign .promotion-card__status {
+    margin-bottom: 8px;
+    color: var(--gray2);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.product-page-redesign .promotion-card__status--active {
+    color: var(--green);
+}
+
+.product-page-redesign .promotion-card__title {
+    color: var(--c-black-brand);
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.product-page-redesign .promotion-card__title:hover,
+.product-page-redesign .promotion-card__link:hover {
+    color: var(--green);
+}
+
+.product-page-redesign .promotion-card__body p {
+    margin: 8px 0 0;
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.product-page-redesign .promotion-card__link {
+    margin-top: auto;
+    color: var(--c-black-brand);
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.product-page-redesign .related-products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin: 0;
+}
+
+.product-page-redesign .related-products-grid .catalog-p__cell {
+    width: auto;
+    min-width: 0;
+    padding: 0;
+}
+
+.product-page-redesign .related-product-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 590px;
+    margin-top: 0;
+    padding: 18px;
+    box-sizing: border-box;
+    border-radius: var(--product-radius);
+}
+
+.product-page-redesign .related-product-card .catalog-page__item-img {
+    height: 205px;
+    flex-shrink: 0;
+    border-radius: var(--product-radius-control);
+    background: var(--c-white);
+}
+
+.product-page-redesign .related-product-card .catalog-page__item-img img {
+    object-fit: contain;
+}
+
+.product-page-redesign .related-product-card .catalog-page__item-title {
+    min-height: 48px;
+    margin-top: 18px;
+    font-size: 17px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.product-page-redesign .related-product-card .catalog-page__item-list {
+    margin-top: 14px;
+}
+
+.product-page-redesign .related-product-card .catalog-page__item-list-it + .catalog-page__item-list-it {
+    margin-top: 5px;
+}
+
+.product-page-redesign .related-product-card .catalog-page__item-list-it span {
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.product-page-redesign .related-product-card .catalog-page__item-list-it span:last-child {
+    padding-left: 10px;
+    color: var(--gray2);
+    text-align: right;
+}
+
+.product-page-redesign .related-product-card .catalog-page__item-al {
+    margin-top: 16px;
+}
+
+.product-page-redesign .related-product-card .catalog-page__item-al-in + .catalog-page__item-al-in {
+    margin-top: 8px;
+}
+
+.product-page-redesign .related-product-card .catalog-page__item-al span {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.product-page-redesign .related-product-card .catalog-page__item-al span:last-of-type {
+    font-size: 17px;
+    line-height: 1.25;
+}
+
+.product-page-redesign .related-product-card .catalog-page__item-btn {
+    position: static;
+    margin-top: auto;
+    padding: 18px 0 0;
+}
+
+.product-page-redesign .related-product-card .catalog-page__item-btn .btn {
+    min-height: 46px;
+    padding: 10px 14px;
+    border-radius: var(--product-radius-control);
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.product-page-redesign .related-product-card .catalog-page__item-btn .btn + .btn {
+    margin-top: 10px;
+}
+
+/* Разворачиваемая статья и FAQ */
+.product-page-redesign .rental-article-section {
+    margin-top: var(--product-section-gap);
+    padding-top: 48px;
+    background: var(--c-white);
+}
+
+.product-page-redesign .rental-article {
+    max-width: 1120px;
+    margin-top: 0;
+}
+
+.product-page-redesign .rental-article h2 {
+    margin: 0 0 18px;
+    font-size: 36px;
+    line-height: 1.18;
+    font-weight: 700;
+}
+
+.product-page-redesign .rental-article__preview,
+.product-page-redesign .rental-article__details {
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.product-page-redesign .rental-article__preview p,
+.product-page-redesign .rental-article__details p {
+    margin: 0;
+}
+
+.product-page-redesign .rental-article__details p + p {
+    margin-top: 12px;
+}
+
+.product-page-redesign .rental-article__details:not([hidden]) {
+    display: block;
+    margin-top: 12px;
+}
+
+.product-page-redesign .rental-article__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--green);
+    font-family: Stolzl, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.product-page-redesign .rental-article__toggle-icon {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform .2s ease;
+}
+
+.product-page-redesign .rental-article__toggle[aria-expanded="true"] .rental-article__toggle-icon {
+    transform: rotate(225deg) translate(-2px, -2px);
+}
+
+.product-page-redesign .rental-article__toggle:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.product-page-redesign .rental-faq-section {
+    margin-top: 0;
+    padding: 52px 0 64px;
+    background: var(--c-white);
+}
+
+.product-page-redesign .rental-faq-section .section-heading {
+    margin-bottom: 16px;
+}
+
+.product-page-redesign .rental-faq {
+    max-width: 1200px;
+}
+
+.product-page-redesign .rental-faq__item {
+    margin-top: 0;
+    border-top: 1px solid var(--bord);
+}
+
+.product-page-redesign .rental-faq__item:last-child {
+    border-bottom: 1px solid var(--bord);
+}
+
+.product-page-redesign .rental-faq__item h3 {
+    margin: 0;
+}
+
+.product-page-redesign .rental-faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    padding: 22px 0;
+    border: 0;
+    background: transparent;
+    color: var(--c-black-brand);
+    font-family: Stolzl, sans-serif;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+}
+
+.product-page-redesign .rental-faq__question:hover {
+    color: var(--green);
+}
+
+.product-page-redesign .rental-faq__question:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: -2px;
+    border-radius: 10px;
+}
+
+.product-page-redesign .rental-faq__icon {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    border: 1px solid var(--bord);
+    border-radius: 50%;
+    transition: border-color .2s ease, background .2s ease;
+}
+
+.product-page-redesign .rental-faq__icon::before,
+.product-page-redesign .rental-faq__icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 2px;
+    background: var(--c-black-brand);
+    transform: translate(-50%, -50%);
+    transition: transform .2s ease, background .2s ease;
+}
+
+.product-page-redesign .rental-faq__icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.product-page-redesign .rental-faq__question[aria-expanded="true"] {
+    color: var(--green);
+}
+
+.product-page-redesign .rental-faq__question[aria-expanded="true"] .rental-faq__icon {
+    border-color: var(--green);
+    background: var(--green);
+}
+
+.product-page-redesign .rental-faq__question[aria-expanded="true"] .rental-faq__icon::before,
+.product-page-redesign .rental-faq__question[aria-expanded="true"] .rental-faq__icon::after {
+    background: var(--c-white);
+}
+
+.product-page-redesign .rental-faq__question[aria-expanded="true"] .rental-faq__icon::after {
+    transform: translate(-50%, -50%);
+}
+
+.product-page-redesign .rental-faq__answer:not([hidden]) {
+    display: block;
+    padding: 0 64px 22px 0;
+}
+
+.product-page-redesign .rental-faq__answer p {
+    max-width: 900px;
+    margin: 0;
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.product-page-redesign .footer {
+    margin-top: var(--product-section-gap);
+}
+
+.product-page-redesign .rental-faq-section ~ .footer {
+    margin-top: 0;
+}
+
+@media (max-width: 1199px) {
+    .product-page-redesign .equipment-form__parameters {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .product-page-redesign .related-products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 991px) {
+    .product-page-redesign {
+        --product-radius-lg: 20px;
+        --product-radius: 14px;
+        --product-radius-control: 12px;
+        --product-section-gap: 32px;
+    }
+
+    .product-page-redesign .card-product__descr.tabs_wrapper {
+        margin-top: 36px;
+    }
+
+    .product-page-redesign .card-product__descr .tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .product-page-redesign .card-product__descr .tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .product-page-redesign .card-product__descr .tabs li {
+        flex: 0 0 auto;
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    .product-page-redesign .card-product__descr .tabs_container > .card-product__i {
+        margin-top: 20px;
+    }
+
+    .product-page-redesign .tab_content > h2 {
+        margin-bottom: 16px;
+        font-size: 24px;
+    }
+
+    .product-page-redesign .tab_content .delivery__list-item {
+        padding: 18px;
+    }
+
+    .product-page-redesign .equipment-panel {
+        padding: 24px 0;
+    }
+
+    .product-page-redesign .equipment-section > .content {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .product-page-redesign .equipment-panel__header .minititle {
+        font-size: 24px;
+    }
+
+    .product-page-redesign .equipment-panel__header p {
+        font-size: 14px;
+    }
+
+    .product-page-redesign .equipment-form {
+        margin-top: 22px;
+    }
+
+    .product-page-redesign .equipment-form__parameters,
+    .product-page-redesign .equipment-form__contacts {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .product-page-redesign .equipment-form__contacts,
+    .product-page-redesign .equipment-form__textarea,
+    .product-page-redesign .equipment-form__submit-row {
+        margin-top: 12px;
+    }
+
+    .product-page-redesign .equipment-field {
+        min-height: 72px;
+        padding: 12px 15px;
+    }
+
+    .product-page-redesign .equipment-form__input {
+        height: 50px;
+        padding: 0 15px;
+        font-size: 14px;
+    }
+
+    .product-page-redesign .equipment-form__textarea {
+        height: 96px;
+        min-height: 96px;
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .product-page-redesign .equipment-form__submit-row .equipment-form__submit {
+        min-height: 50px;
+        padding: 12px 20px;
+    }
+
+    .product-page-redesign .section-heading {
+        margin-bottom: 18px;
+    }
+
+    .product-page-redesign .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .product-page-redesign .promotions-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .product-page-redesign .promotion-card {
+        border-radius: var(--product-radius);
+    }
+
+    .product-page-redesign .related-products-grid {
+        gap: 12px;
+    }
+
+    .product-page-redesign .related-product-card {
+        min-height: 560px;
+    }
+
+    .product-page-redesign .rental-article-section {
+        padding-top: 32px;
+    }
+
+    .product-page-redesign .rental-article h2 {
+        margin-bottom: 14px;
+        font-size: 28px;
+    }
+
+    .product-page-redesign .rental-article__preview,
+    .product-page-redesign .rental-article__details,
+    .product-page-redesign .rental-faq__answer p {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .product-page-redesign .rental-article__toggle {
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    .product-page-redesign .rental-faq-section {
+        padding: 38px 0 42px;
+    }
+
+    .product-page-redesign .rental-faq__question {
+        padding: 18px 0;
+        font-size: 16px;
+    }
+
+    .product-page-redesign .rental-faq__answer:not([hidden]) {
+        padding: 0 48px 18px 0;
+    }
+
+    .product-page-redesign .footer {
+        margin-top: var(--product-section-gap);
+    }
+}
+
+@media (max-width: 767px) {
+    .product-page-redesign .section-heading {
+        align-items: flex-end;
+        gap: 12px;
+    }
+
+    .product-page-redesign .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .product-page-redesign .section-heading__link {
+        font-size: 12px;
+        text-align: right;
+    }
+
+    .product-page-redesign .promotion-card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .product-page-redesign .promotion-card__media {
+        height: 200px;
+    }
+
+    .product-page-redesign .promotion-card__body {
+        min-height: 170px;
+        padding: 0;
+    }
+
+    .product-page-redesign .promotion-card__title {
+        font-size: 18px;
+    }
+
+    .product-page-redesign .related-products-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .product-page-redesign .related-product-card {
+        min-height: 570px;
+        padding: 16px;
+    }
+
+    .product-page-redesign .related-product-card .catalog-page__item-img {
+        height: 220px;
+    }
+
+    .product-page-redesign .card-product__rent-economy {
+        font-size: 13px;
+    }
+
+    .product-page-redesign .rental-article h2 {
+        font-size: 25px;
+    }
+
+    .product-page-redesign .rental-faq__question {
+        gap: 16px;
+    }
+
+    .product-page-redesign .rental-faq__icon {
+        width: 28px;
+        height: 28px;
+        flex-basis: 28px;
+    }
+
+    .product-page-redesign .rental-faq__answer:not([hidden]) {
+        padding-right: 0;
+    }
+}
