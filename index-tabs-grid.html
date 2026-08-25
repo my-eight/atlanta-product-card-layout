@@ -112,7 +112,7 @@
 /**/
 </style><style type="text/css" data-ymaps="css-modules">.ymaps-2-1-79-pictogramCircleIconContent{display: block; background-size: contain; width: 22px; height: 22px; background-repeat: no-repeat; position: absolute; top: -11px; left: -11px;}
 </style></head>
-<body class="product-page-redesign tabs-grid-variant">
+<body class="product-page-redesign tabs-grid-variant tabs-select-variant">
 <div class="header-mob">
     <div class="container">
         <div class="header-mob__inner">
@@ -555,12 +555,55 @@
 
             <div class="card-product__descr tabs_wrapper open">
                 <div class="tabs_container">
+                    <button class="mobile-tabs-select" type="button" aria-expanded="false">
+                        <span class="mobile-tabs-select__caption">Раздел:</span>
+                        <span class="mobile-tabs-select__value">Описание</span>
+                        <span class="mobile-tabs-select__arrow" aria-hidden="true"></span>
+                    </button>
                     <ul class="tabs delivery__list">
                         <li class="active" id="product-description">Описание</li>
                         <li id="all-characteristics">Все характеристики</li>
                         <li id="rental-terms">Условия аренды</li>
                         <li id="product-uses">Где применяется</li>
                     </ul>
+                    <script>
+                        (function () {
+                            var container = document.currentScript.closest('.tabs_container');
+                            var button = container.querySelector('.mobile-tabs-select');
+                            var value = button.querySelector('.mobile-tabs-select__value');
+                            var items = container.querySelectorAll('.tabs > li');
+
+                            function closeMenu() {
+                                container.classList.remove('is-open');
+                                button.setAttribute('aria-expanded', 'false');
+                            }
+
+                            button.addEventListener('click', function () {
+                                var willOpen = !container.classList.contains('is-open');
+                                container.classList.toggle('is-open', willOpen);
+                                button.setAttribute('aria-expanded', String(willOpen));
+                            });
+
+                            items.forEach(function (item) {
+                                item.addEventListener('click', function () {
+                                    value.textContent = item.textContent.trim();
+                                    closeMenu();
+                                });
+                            });
+
+                            document.addEventListener('click', function (event) {
+                                if (!container.contains(event.target)) {
+                                    closeMenu();
+                                }
+                            });
+
+                            document.addEventListener('keydown', function (event) {
+                                if (event.key === 'Escape') {
+                                    closeMenu();
+                                }
+                            });
+                        })();
+                    </script>
 
                 <div class="card-product__i">
                     <div class="tab_content active" data-tab="product-description">
