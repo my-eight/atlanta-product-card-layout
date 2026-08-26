@@ -1092,6 +1092,11 @@
         display: none;
     }
 
+    .product-page-redesign.tabs-short-labels-variant .card-product__descr .tabs {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
     .product-page-redesign.tabs-short-labels-variant .tab-label-mobile {
         display: inline;
     }

@@ -44,6 +44,8 @@ window.addEventListener('load', function () {
     var photo = document.querySelector('.card-product__slider_for');
     var ctaRect = cta.getBoundingClientRect();
     var photoRect = photo.getBoundingClientRect();
+    var techRect = document.querySelector('.card-product__tech').getBoundingClientRect();
+    var tabsRect = document.querySelector('.card-product__descr .tabs').getBoundingClientRect();
     var root = document.documentElement;
     var tabs = Array.from(document.querySelectorAll('.card-product__descr .tabs > li'));
 
@@ -53,6 +55,10 @@ window.addEventListener('load', function () {
     root.dataset.bodyPaddingBottom = getComputedStyle(document.body).paddingBottom;
     root.dataset.ctaTop = String(Math.round(ctaRect.top));
     root.dataset.photoBottom = String(Math.round(photoRect.bottom));
+    root.dataset.techLeft = String(Math.round(techRect.left));
+    root.dataset.techRight = String(Math.round(techRect.right));
+    root.dataset.tabsLeft = String(Math.round(tabsRect.left));
+    root.dataset.tabsRight = String(Math.round(tabsRect.right));
     root.dataset.bodyClasses = document.body.className;
     root.dataset.tabLabels = JSON.stringify(tabs.map(function (tab) {
         return tab.innerText.trim();
@@ -158,6 +164,12 @@ class MobileCtaLayoutTest(unittest.TestCase):
             all(size >= 14 for size in json.loads(attrs["data-tab-font-sizes"]))
         )
         self.assertEqual(attrs["data-tab-rows"], "2")
+
+    def test_main_mobile_tabs_align_with_main_characteristics(self):
+        attrs = self.render(375)
+
+        self.assertEqual(attrs["data-tabs-left"], attrs["data-tech-left"])
+        self.assertEqual(attrs["data-tabs-right"], attrs["data-tech-right"])
 
     def test_desktop_cta_remains_in_document_flow(self):
         attrs = self.render(1280)
