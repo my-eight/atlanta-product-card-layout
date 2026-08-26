@@ -1,5 +1,6 @@
 import html.parser
 import http.server
+import json
 import pathlib
 import re
 import subprocess
@@ -19,10 +20,17 @@ class QuietHandler(http.server.SimpleHTTPRequestHandler):
         pass
 
     def do_GET(self):
-        if self.path != "/__mobile_cta_probe__":
+        probe_pages = {
+            "/__mobile_cta_probe__": "index.html",
+            "/__mobile_tabs_grid3_probe__": "index-tabs-grid3.html",
+        }
+        if self.path not in probe_pages:
             return super().do_GET()
 
-        source = (PROJECT_ROOT / "index.html").read_text(encoding="utf-8")
+        page = PROJECT_ROOT / probe_pages[self.path]
+        if not page.exists():
+            page = PROJECT_ROOT / "index.html"
+        source = page.read_text(encoding="utf-8")
         source = re.sub(
             r"<script\b[^>]*>.*?</script>",
             "",
@@ -37,6 +45,7 @@ window.addEventListener('load', function () {
     var ctaRect = cta.getBoundingClientRect();
     var photoRect = photo.getBoundingClientRect();
     var root = document.documentElement;
+    var tabs = Array.from(document.querySelectorAll('.card-product__descr .tabs > li'));
 
     root.dataset.probeReady = 'true';
     root.dataset.viewportWidth = String(window.innerWidth);
@@ -44,6 +53,16 @@ window.addEventListener('load', function () {
     root.dataset.bodyPaddingBottom = getComputedStyle(document.body).paddingBottom;
     root.dataset.ctaTop = String(Math.round(ctaRect.top));
     root.dataset.photoBottom = String(Math.round(photoRect.bottom));
+    root.dataset.bodyClasses = document.body.className;
+    root.dataset.tabLabels = JSON.stringify(tabs.map(function (tab) {
+        return tab.innerText.trim();
+    }));
+    root.dataset.tabFontSizes = JSON.stringify(tabs.map(function (tab) {
+        return parseFloat(getComputedStyle(tab).fontSize);
+    }));
+    root.dataset.tabRows = String(new Set(tabs.map(function (tab) {
+        return Math.round(tab.getBoundingClientRect().top);
+    })).size);
 });
 </script>
 """
@@ -76,13 +95,18 @@ class MobileCtaLayoutTest(unittest.TestCase):
         cls.thread = threading.Thread(target=cls.server.serve_forever, daemon=True)
         cls.thread.start()
         cls.url = f"http://127.0.0.1:{cls.server.server_port}/__mobile_cta_probe__"
+        cls.render_cache = {}
 
     @classmethod
     def tearDownClass(cls):
         cls.server.shutdown()
         cls.server.server_close()
 
-    def render(self, width):
+    def render(self, width, probe_path="/__mobile_cta_probe__"):
+        cache_key = (width, probe_path)
+        if cache_key in self.render_cache:
+            return self.render_cache[cache_key]
+
         result = subprocess.run(
             [
                 str(CHROME),
@@ -97,7 +121,7 @@ class MobileCtaLayoutTest(unittest.TestCase):
                 f"--window-size={width},1200",
                 "--virtual-time-budget=3000",
                 "--dump-dom",
-                self.url,
+                self.url.replace("/__mobile_cta_probe__", probe_path),
             ],
             check=True,
             capture_output=True,
@@ -107,6 +131,7 @@ class MobileCtaLayoutTest(unittest.TestCase):
         parser = HtmlAttributes()
         parser.feed(result.stdout)
         self.assertEqual(parser.attributes.get("data-probe-ready"), "true")
+        self.render_cache[cache_key] = parser.attributes
         return parser.attributes
 
     def test_main_mobile_cta_is_in_document_flow_below_photo(self):
@@ -121,11 +146,63 @@ class MobileCtaLayoutTest(unittest.TestCase):
 
         self.assertEqual(attrs["data-body-padding-bottom"], "0px")
 
+    def test_main_mobile_shows_four_short_readable_tabs(self):
+        attrs = self.render(375)
+
+        self.assertIn("tabs-short-labels-variant", attrs["data-body-classes"])
+        self.assertEqual(
+            json.loads(attrs["data-tab-labels"]),
+            ["Описание", "Характеристики", "Аренда", "Применение"],
+        )
+        self.assertTrue(
+            all(size >= 14 for size in json.loads(attrs["data-tab-font-sizes"]))
+        )
+        self.assertEqual(attrs["data-tab-rows"], "2")
+
     def test_desktop_cta_remains_in_document_flow(self):
         attrs = self.render(1280)
 
         self.assertGreater(int(attrs["data-viewport-width"]), 767)
         self.assertEqual(attrs["data-cta-position"], "static")
+
+    def test_main_desktop_keeps_full_tab_labels(self):
+        attrs = self.render(1280)
+
+        self.assertEqual(
+            json.loads(attrs["data-tab-labels"]),
+            [
+                "Описание",
+                "Все характеристики",
+                "Условия аренды",
+                "Где применяется",
+            ],
+        )
+
+    def test_grid3_mobile_shows_four_short_readable_tabs(self):
+        attrs = self.render(375, "/__mobile_tabs_grid3_probe__")
+
+        self.assertIn("tabs-short-labels-variant", attrs["data-body-classes"])
+        self.assertEqual(
+            json.loads(attrs["data-tab-labels"]),
+            ["Описание", "Характеристики", "Аренда", "Применение"],
+        )
+        self.assertTrue(
+            all(size >= 14 for size in json.loads(attrs["data-tab-font-sizes"]))
+        )
+        self.assertEqual(attrs["data-tab-rows"], "2")
+
+    def test_grid3_desktop_keeps_full_tab_labels(self):
+        attrs = self.render(1280, "/__mobile_tabs_grid3_probe__")
+
+        self.assertEqual(
+            json.loads(attrs["data-tab-labels"]),
+            [
+                "Описание",
+                "Все характеристики",
+                "Условия аренды",
+                "Где применяется",
+            ],
+        )
 
 
 if __name__ == "__main__":
