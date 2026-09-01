@@ -1164,6 +1164,96 @@
         font-weight: 500;
     }
 
+    .product-page-redesign.main-index-page .prices-mob .card-product__pr-tt,
+    .product-page-redesign.main-index-page .prices-mob .contacts__list-drop-t,
+    .product-page-redesign.main-index-page .prices-mob .card-product__rent-economy,
+    .product-page-redesign.main-index-page .prices-mob .card-product__availability-mobile .card-product__i-item {
+        font-size: 14px;
+    }
+
+    .product-page-redesign.main-index-page .prices-mob .card-product__pr-now {
+        font-size: 20px;
+    }
+
+    .product-page-redesign.main-index-page .card-product__tech-tit {
+        font-size: 20px;
+    }
+
+    .product-page-redesign.main-index-page .card-product__tech-row span {
+        font-size: 14px;
+    }
+
+    .product-page-redesign.main-index-page .equipment-panel__header .minititle {
+        font-size: 20px;
+    }
+
+    .product-page-redesign.main-index-page .equipment-panel__header p {
+        font-size: 14px;
+    }
+
+    .product-page-redesign.main-index-page .equipment-form__parameters .contacts__list-drop-t,
+    .product-page-redesign.main-index-page .equipment-form__parameters .catalog-page__sort-tt,
+    .product-page-redesign.main-index-page .equipment-form__parameters .catalog-page__sort-drop-item,
+    .product-page-redesign.main-index-page .equipment-form__input,
+    .product-page-redesign.main-index-page .equipment-form__textarea {
+        font-size: 12px;
+    }
+
+    .product-page-redesign.main-index-page .promotions-section .section-heading__link,
+    .product-page-redesign.main-index-page .promotion-card__status,
+    .product-page-redesign.main-index-page .promotion-card__link {
+        font-size: 12px;
+    }
+
+    .product-page-redesign.main-index-page .promotion-card__title {
+        font-size: 20px;
+    }
+
+    .product-page-redesign.main-index-page .promotion-card__body p {
+        font-size: 14px;
+    }
+
+    .product-page-redesign.main-index-page .rental-terms-summary {
+        display: none;
+    }
+
+    .product-page-redesign.main-index-page .card-product__btn .btn,
+    .product-page-redesign.main-index-page .card-product__descr .tabs li {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-description"] .card-product__descr-tx,
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-description"] .card-product__descr-tx p,
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-uses"] .card-product__descr-tx,
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-uses"] .card-product__descr-tx p,
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-uses"] .card-product__descr-tx li,
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-uses"] .about-main__bt-t,
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-uses"] .leasing-tx__inf li,
+    .product-page-redesign.main-index-page .tab_content[data-tab="rental-terms"] .delivery__list-item p,
+    .product-page-redesign.main-index-page .tab_content[data-tab="all-characteristics"] .card-product__descr-item span {
+        font-size: 14px;
+    }
+
+    .product-page-redesign.main-index-page .tab_content[data-tab="rental-terms"] .banner__slider-tx {
+        font-size: 16px;
+    }
+
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-description"] .card-product__descr-tx {
+        opacity: 1;
+    }
+
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-description"] .card-product__descr-tx tr:first-child td,
+    .product-page-redesign.main-index-page .tab_content[data-tab="rental-terms"] h2,
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-uses"] h2,
+    .product-page-redesign.main-index-page .tab_content[data-tab="all-characteristics"] h2 {
+        font-size: 20px;
+    }
+
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-description"] .card-product__descr-tx tr:first-child td {
+        color: var(--c-black-brand);
+    }
+
     .product-page-redesign .prices-mob .prices-left {
         width: 100%;
     }
@@ -1389,5 +1479,67 @@
 
     .product-page-redesign .rental-faq__answer:not([hidden]) {
         padding-right: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .product-page-redesign.main-index-page .prices-desc .card-product__pr-tt,
+    .product-page-redesign.main-index-page .prices-desc .contacts__list-drop-t,
+    .product-page-redesign.main-index-page .prices-desc .card-product__rent-economy,
+    .product-page-redesign.main-index-page .card-product__r > .card-product__i .card-product__i-item,
+    .product-page-redesign.main-index-page .card-product__tech-row span,
+    .product-page-redesign.main-index-page .equipment-panel__header p,
+    .product-page-redesign.main-index-page .promotion-card__body p,
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-description"] .card-product__descr-tx,
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-description"] .card-product__descr-tx p,
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-uses"] .card-product__descr-tx,
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-uses"] .card-product__descr-tx p,
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-uses"] .card-product__descr-tx li,
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-uses"] .about-main__bt-t,
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-uses"] .leasing-tx__inf li,
+    .product-page-redesign.main-index-page .tab_content[data-tab="rental-terms"] .delivery__list-item p,
+    .product-page-redesign.main-index-page .tab_content[data-tab="all-characteristics"] .card-product__descr-item span {
+        font-size: 16px;
+    }
+
+    .product-page-redesign.main-index-page .equipment-form__parameters .contacts__list-drop-t,
+    .product-page-redesign.main-index-page .equipment-form__parameters .catalog-page__sort-tt,
+    .product-page-redesign.main-index-page .equipment-form__parameters .catalog-page__sort-drop-item,
+    .product-page-redesign.main-index-page .equipment-form__input,
+    .product-page-redesign.main-index-page .equipment-form__textarea,
+    .product-page-redesign.main-index-page .promotions-section .section-heading__link,
+    .product-page-redesign.main-index-page .promotion-card__status,
+    .product-page-redesign.main-index-page .promotion-card__link {
+        font-size: 14px;
+    }
+
+    .product-page-redesign.main-index-page .card-product__btn .btn,
+    .product-page-redesign.main-index-page .card-product__descr .tabs li,
+    .product-page-redesign.main-index-page .tab_content[data-tab="rental-terms"] .banner__slider-tx {
+        font-size: 18px;
+    }
+
+    .product-page-redesign.main-index-page .card-product__btn .btn,
+    .product-page-redesign.main-index-page .card-product__descr .tabs li {
+        font-weight: 600;
+    }
+
+    .product-page-redesign.main-index-page .prices-desc .card-product__pr-now,
+    .product-page-redesign.main-index-page .card-product__tech-tit,
+    .product-page-redesign.main-index-page .equipment-panel__header .minititle,
+    .product-page-redesign.main-index-page .promotion-card__title,
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-description"] .card-product__descr-tx tr:first-child td,
+    .product-page-redesign.main-index-page .tab_content[data-tab="rental-terms"] h2,
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-uses"] h2,
+    .product-page-redesign.main-index-page .tab_content[data-tab="all-characteristics"] h2 {
+        font-size: 22px;
+    }
+
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-description"] .card-product__descr-tx {
+        opacity: 1;
+    }
+
+    .product-page-redesign.main-index-page .tab_content[data-tab="product-description"] .card-product__descr-tx tr:first-child td {
+        color: var(--c-black-brand);
     }
 }

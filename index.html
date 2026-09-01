@@ -112,7 +112,7 @@
 /**/
 </style><style type="text/css" data-ymaps="css-modules">.ymaps-2-1-79-pictogramCircleIconContent{display: block; background-size: contain; width: 22px; height: 22px; background-repeat: no-repeat; position: absolute; top: -11px; left: -11px;}
 </style></head>
-<body class="product-page-redesign tabs-grid-compact tabs-short-labels-variant">
+<body class="product-page-redesign tabs-grid-compact tabs-short-labels-variant main-index-page">
 <div class="header-mob">
     <div class="container">
         <div class="header-mob__inner">
@@ -547,7 +547,11 @@
                                 
                         </div>
 
+                        <!--
+                        Кнопка «Все характеристики» скрыта по указанию клиента:
+                        сразу ниже расположен блок с полными характеристиками, поэтому кнопка дублирует информацию.
                         <a href="https://atlanta-gk.ru/arenda/nojnichnyy_elektricheskiy_podemnik_zoomlion_zs1012hd/#info_detail" class="card-product__tech-btn">Все характеристики</a>
+                        -->
 
                     </div>
                 </div>
@@ -661,7 +665,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-product__i">
+                        <!--
+                        На мобильной версии эта фраза скрыта как избыточная:
+                        информация об оплате и подборе техники уже раскрыта в блоках выше.
+                        -->
+                        <div class="card-product__i rental-terms-summary">
                             <span class="all__tit">Оплата наличная и безналичная. Подберём технику и подготовим коммерческое предложение.</span>
                         </div>
                     </div>
@@ -823,6 +831,22 @@
 
 <script>
 document.addEventListener('click', function (event) {
+    var clickedField = event.target.closest('.equipment-form .catalog-page__sort-in');
+    if (!clickedField) {
+        document.querySelectorAll('.equipment-form .catalog-page__sort-in.op').forEach(function (field) {
+            field.classList.remove('op');
+        });
+    }
+
+    var trigger = event.target.closest('.equipment-form .catalog-page__sort-tt');
+    if (trigger) {
+        var currentField = trigger.closest('.catalog-page__sort-in');
+        document.querySelectorAll('.equipment-form .catalog-page__sort-in.op').forEach(function (field) {
+            if (field !== currentField) field.classList.remove('op');
+        });
+        return;
+    }
+
     var option = event.target.closest('.equipment-form .catalog-page__sort-drop-item');
     if (!option) return;
 
