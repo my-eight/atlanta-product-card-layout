@@ -1388,6 +1388,27 @@
         gap: 10px;
     }
 
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-products-grid {
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 88%;
+        gap: 12px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 0;
+        overscroll-behavior-inline: contain;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-products-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-products-grid .catalog-p__cell {
+        scroll-snap-align: start;
+    }
+
     .product-page-redesign.tabs-grid-compact .related-product-card {
         min-height: 458px;
         height: 100%;
