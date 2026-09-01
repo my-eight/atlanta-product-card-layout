@@ -1429,6 +1429,10 @@
         font-weight: 700;
     }
 
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-product-card .catalog-page__item-title {
+        min-height: 0;
+    }
+
     .product-page-redesign.tabs-grid-compact .related-product-card .catalog-page__item-list {
         margin-top: 8px;
     }
@@ -1442,8 +1446,16 @@
         line-height: 1.3;
     }
 
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-product-card .catalog-page__item-list-it span {
+        font-size: 11px;
+    }
+
     .product-page-redesign.tabs-grid-compact .related-product-card .catalog-page__item-list-it span:last-child {
         padding-left: 4px;
+    }
+
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-product-card .catalog-page__item-list-it span:last-child {
+        padding-left: 12px;
     }
 
     .product-page-redesign.tabs-grid-compact .related-product-card .catalog-page__item-al {
@@ -1457,6 +1469,10 @@
     .product-page-redesign.tabs-grid-compact .related-product-card .catalog-page__item-al span {
         font-size: 9px;
         line-height: 1.25;
+    }
+
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-product-card .catalog-page__item-al span {
+        font-size: 11px;
     }
 
     .product-page-redesign.tabs-grid-compact .related-product-card .catalog-page__item-al span:last-of-type {
@@ -1478,6 +1494,78 @@
 
     .product-page-redesign.tabs-grid-compact .related-product-card .catalog-page__item-btn .btn + .btn {
         margin-top: 7px;
+    }
+
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-product-card {
+        display: flex;
+        min-height: 0;
+        height: auto;
+    }
+
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-product-card .catalog-page__item-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-product-card .catalog-page__item-img a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-product-card .catalog-page__item-img img {
+        position: static;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-position: center;
+    }
+
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-product-card .catalog-page__item-list {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-product-card .catalog-page__item-list-it {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        width: 100%;
+        padding: 5px 0;
+        border-bottom: 1px solid rgba(67, 67, 80, 0.12);
+    }
+
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-product-card .catalog-page__item-list-it + .catalog-page__item-list-it {
+        margin-top: 0;
+    }
+
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-product-card .catalog-page__item-list-it span {
+        width: auto;
+    }
+
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-product-card .catalog-page__item-al {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        width: 100%;
+        margin-top: 10px;
+        padding: 9px 10px;
+        box-sizing: border-box;
+        border-radius: 9px;
+        background: rgba(242, 244, 252, 0.72);
+    }
+
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-product-card .catalog-page__item-al-in + .catalog-page__item-al-in {
+        margin-top: 0;
+    }
+
+    .product-page-redesign.main-index-page.tabs-grid-compact .related-product-card .catalog-page__item-btn {
+        margin-top: 12px;
+        padding-top: 0;
     }
 
     .product-page-redesign .card-product__rent-economy {
